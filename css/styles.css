@@ -33,7 +33,7 @@ footer {
 }
 
 .navbar{
-  background: #901CAD;
+  background: #121212;
 }
 
 .tab-content {
@@ -46,20 +46,28 @@ a, .btn{
   cursor: pointer;
 }
 
-.carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5);
+
+/* teams ticker styles */
+/* external css: flickity.css */
+
+.schedule-carousel h6{
+  color:white;
 }
 
-.carousel {
-  border: solid #5637DD;
+.carousel-cell {
+  width: 20%;
+  height: 100px;
+  margin-right: 10px;
+  background: rgb(44, 44, 44);
+  border-radius: 5px;
 }
 
-/* .ticker-block .dia-border{
-  display: inline-block;
-  margin: 0;
-  margin-top: -30px;
-  margin-left: -30px;
-  content: '';
-  border: 30px solid transparent;
-  border-right: 200px solid #0ff;
-} */
+.carousel-cell.is-selected {
+  background: black;
+}
+
+body.hp,
+.jumbotron{
+  background:#121212;
+}
+
