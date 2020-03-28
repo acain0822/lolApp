@@ -1,4 +1,5 @@
-$('.schedule-carousel').flickity({
+$(function(){
+  $('.schedule-carousel').flickity({
     // options
     cellAlign: 'left',
     contain: true,
@@ -7,3 +8,6 @@ $('.schedule-carousel').flickity({
     pageDots: false,
    
   });
+
+ $('.standingheader').tooltip();
+})
