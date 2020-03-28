@@ -30,5 +30,15 @@ nav a {
   background: #0d0d0e;
   color: white; }
 
+.schedule-carousel .carousel-cell {
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  height: 100px; }
+
+.schedule-carousel .carousel-cell.is-selected {
+  background: rgba(255, 255, 255, 0.05); }
+
 .schedule-carousel img {
   width: 50px; }
+
+.home-media {
+  max-width: 1200px; }
