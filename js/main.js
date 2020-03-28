@@ -4,5 +4,6 @@ $('.schedule-carousel').flickity({
     contain: true,
     groupCells: 4,
     prevNextButtons: false,
-    pageDots: false
+    pageDots: false,
+   
   });
