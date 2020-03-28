@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet"  href="node_modules//bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet"  href="node_modules/flickity/css/flickity.css" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- end build -->
+    <title>LoLApp</title>
+  </head>
+
+  <body class="standings">
+    <div class="jumbotron py-sm-2 my-0">
+      <!-- logo here -->
+      <nav class="navbar navbar-expand-lg text-white">
+        <a class="navbar-brand" href="/">LoLApp</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Standings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Schedule</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Teams
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">TSM</a>
+                <a class="dropdown-item" href="#">Team Liquid</a>
+                <!-- <div class="dropdown-divider"></div> -->
+                <a class="dropdown-item" href="#">FlyQuest</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Watch</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0 ">
+            <input
+              class="rounded-left form-control mr-sm-0 search-field"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="ml-0 btn btn-outline my-2 my-sm-0 rounded-right" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+    </div>
+
+
+<div class="container standings-container">
+    <h1 class="text-white">Standings</h1>
+    <hr/>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="reg-tab" data-toggle="tab" href="#reg" role="tab" aria-controls="Regular SeasonS" aria-selected="true">Regular Season</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="playoff-tab" data-toggle="tab" href="#playoffs" role="tab" aria-controls="playoffs" aria-selected="false">Playoffs</a>
+        </li>
+       
+      </ul>
+
+      <div class="tab-content" id="myTabContent">
+          <!-- start regular season -->
+        <div class="tab-pane fade show active" id="reg" role="tabpanel" aria-labelledby="reg-tab">
+            <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Team</th>
+
+                    <th scope="col" >
+                        <div class="standingheader" data-toggle="tooltip" title="Wins">W</div>
+                    </th>
+
+                    <th class="standingheader" scope="col" data-toggle="tooltip" title="Losses">L</th>
+                    <th class="standingheader" scope="col" data-toggle="tooltip" title="Matches Played">MP</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td width="70%">TSM</td>
+                    <td>West</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>+4</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>TSM</td>
+                    <td>West</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>+4</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>TSM</td>
+                    <td>West</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>+4</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>TSM</td>
+                    <td>West</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>+4</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>TSM</td>
+                    <td>West</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>+4</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>TSM</td>
+                    <td>West</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>+4</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>TSM</td>
+                    <td>West</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>+4</td>
+                  </tr>
+                 
+                 
+                </tbody>
+              </table>
+        </div>
+        <!-- end regular season -->
+
+        <!-- start playoffs -->
+        <div class="tab-pane fade" id="playoffs" role="tabpanel" aria-labelledby="playoff-tab">This is playoff information!</div>
+        <!-- end playoffs -->
+      </div>
+
+
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+   <!-- build:js js/main.js-->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/flickity/dist/flickity.pkgd.min.js"></script>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+   
+    <script src="js/main.js"></script>
+<!--- endbuild -->
+  </body>
+</html>
