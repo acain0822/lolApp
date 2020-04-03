@@ -7,13 +7,14 @@
 .schedule-carousel{
     .carousel-cell{
         border: 1px solid rgba(255,255,255, 0.07) !important;
-        height:100px;
+        height:72px;
+        width:150px;
     }
     .carousel-cell.is-selected {
         background: rgba(255,255,255, 0.05);
       }
     img{
-        width:50px;
+        width:37px;
     }
 }
 

@@ -10,6 +10,7 @@ nav{
         background:black;
         color:white;
         outline:none;
+        border:none;
         &:focus{
             outline:none;
             box-shadow:none;
@@ -22,6 +23,10 @@ nav{
     .btn[type="submit"]{
         background:$mid-gold;
         color:$bkg-color;
+        opacity: 0.65;
+        &:hover{
+            opacity:1;
+        }
     }
     .form-control{
         border-radius:0px;

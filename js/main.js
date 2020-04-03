@@ -3,7 +3,7 @@ $(function(){
     // options
     cellAlign: 'left',
     contain: true,
-    groupCells: 4,
+    groupCells: 5,
     prevNextButtons: false,
     pageDots: false,
    

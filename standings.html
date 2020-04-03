@@ -19,67 +19,67 @@
 
   <body class="standings">
     <div class="jumbotron py-sm-2 my-0">
-      <!-- logo here -->
-      <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="/">LoLApp</a>
-        <button
-          class="navbar-toggler "
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Standings</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Schedule</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Teams
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">TSM</a>
-                <a class="dropdown-item" href="#">Team Liquid</a>
-                <!-- <div class="dropdown-divider"></div> -->
-                <a class="dropdown-item" href="#">FlyQuest</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Watch</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0 ">
-            <input
-              class="rounded-left form-control mr-sm-0 search-field"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="ml-0 btn btn-outline my-2 my-sm-0 rounded-right" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-      </nav>
-    </div>
-
+        <!-- logo here -->
+        <nav class="navbar navbar-expand-lg text-white navbar-dark">
+          <a class="navbar-brand" href="/">LoLApp</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/standings.html">Standings</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="schedule.html">Schedule</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Teams
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">TSM</a>
+                  <a class="dropdown-item" href="#">Team Liquid</a>
+                  <!-- <div class="dropdown-divider"></div> -->
+                  <a class="dropdown-item" href="#">FlyQuest</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Watch</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 ">
+              <input
+                class="rounded-left form-control mr-sm-0 search-field"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="ml-0 btn btn-outline my-2 my-sm-0 rounded-right" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </nav>
+      </div>
+  
 
 <div class="container standings-container">
     <h1 class="text-white">Standings</h1>
@@ -101,90 +101,99 @@
             <table class="table table-hover table-dark">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Team</th>
+                    <th colspan="1" scope="col">#</th>
+                    <th colspan="1" scope="col">Team</th>
 
-                    <th scope="col" >
-                        <div class="standingheader" data-toggle="tooltip" title="Wins">W</div>
+                    <th colspan="2" scope="col" >
+                        <div class="standingheader" style="text-align:center">Games</div>
                     </th>
 
-                    <th class="standingheader" scope="col" data-toggle="tooltip" title="Losses">L</th>
-                    <th class="standingheader" scope="col" data-toggle="tooltip" title="Matches Played">MP</th>
-                    
+                    <th colspan="1" class="standingheader" scope="col" data-toggle="tooltip" title="Longest Streak">Str</th>
+                   
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td width="70%">TSM</td>
-                    <td>West</td>
-                    <td>4</td>
-                    <td>1</td>
-                    <td>5</td>
-                    <td>+4</td>
+                    <td width="70%"> <img src="img/liquid.png"/>Team Liquid</td>
+                    <td>14 - 4</td>
+                    <td>78%</td>
+                    <td>2W</td>
                   </tr>
 
                   <tr>
-                    <th scope="row">1</th>
-                    <td>TSM</td>
-                    <td>West</td>
-                    <td>4</td>
-                    <td>1</td>
-                    <td>5</td>
-                    <td>+4</td>
+                    <th scope="row">2</th>
+                    <td><img src="img/c9.png"/> Cloud 9</td>
+                    <td>12-6</td>
+                    <td>67%</td>
+                    <td>3W</td>
                   </tr>
 
                   <tr>
-                    <th scope="row">1</th>
-                    <td>TSM</td>
-                    <td>West</td>
-                    <td>4</td>
-                    <td>1</td>
-                    <td>5</td>
-                    <td>+4</td>
+                    <th scope="row">3</th>
+                    <td><img src="img/clg.png"/>Counter Logic Gaming</td>
+                    <td>12-6</td>
+                    <td>67%</td>
+                    <td>1L</td>
                   </tr>
 
                   <tr>
-                    <th scope="row">1</th>
-                    <td>TSM</td>
-                    <td>West</td>
-                    <td>4</td>
-                    <td>1</td>
-                    <td>5</td>
-                    <td>+4</td>
+                    <th scope="row">4</th>
+                    <td><img src="img/tsm.png"/> TSM</td>
+                    <td>10-8</td>
+                    <td>56%</td>
+                    <td>1L</td>
                   </tr>
 
                   <tr>
-                    <th scope="row">1</th>
-                    <td>TSM</td>
-                    <td>West</td>
-                    <td>4</td>
-                    <td>1</td>
-                    <td>5</td>
-                    <td>+4</td>
+                    <th scope="row">5</th>
+                    <td><img src="img/clutch.png"/> Clutch Gaming</td>
+                    <td>9-9</td>
+                    <td>50%</td>
+                    <td>3W</td>
                   </tr>
 
                   <tr>
-                    <th scope="row">1</th>
-                    <td>TSM</td>
-                    <td>West</td>
-                    <td>4</td>
-                    <td>1</td>
-                    <td>5</td>
-                    <td>+4</td>
+                    <th scope="row">6</th>
+                    <td><img src="img/optic.png"/> Optic Gaming</td>
+                    <td>8-10</td>
+                    <td>44%</td>
+                    <td>4L</td>
                   </tr>
 
                   <tr>
-                    <th scope="row">1</th>
-                    <td>TSM</td>
-                    <td>West</td>
-                    <td>4</td>
-                    <td>1</td>
-                    <td>5</td>
-                    <td>+4</td>
+                    <th scope="row">7</th>
+                    <td><img src="img/gg.png"/> Golden Gaurdians</td>
+                    <td>8-10</td>
+                    <td>44%</td>
+                    <td>2L</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">8</th>
+                    <td><img src="img/100thieves.png"/> 100 Thieves</td>
+                    <td>8-10</td>
+                    <td>44%</td>
+                    <td>1W</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">9</th>
+                    <td><img src="img/flyquest.png"/> FlyQuest</td>
+                    <td>5-13</td>
+                    <td>28%</td>
+                    <td>3L</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">10</th>
+                    <td><img src="img/echofox.png"/> Echo Fox</td>
+                    <td>4-14</td>
+                    <td>22%</td>
+                    <td>1W</td>
                   </tr>
                  
-                 
+
                 </tbody>
               </table>
         </div>
