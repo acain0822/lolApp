@@ -3,38 +3,27 @@
   "version": "1.0.0",
   "description": "A standings and schedule app.",
   "main": "index.js",
-  "scripts": {
-    "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin",
-    "clean": "rimraf dist",
-    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
-    "imagemin": "imagemin img/* -o dist/img",
-    "lite": "lite-server",
-    "scss": "node-sass -o css/ css/",
-    "start": "npm run watch:all",
-    "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html",
-    "watch:scss": "onchange \"css/**/*.scss\" -- npm run scss",
-    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\""
-  },
-  "author": "",
+  "scripts": {},
+  "author": "tony-cain <cain.papercut@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "create-react-app": "^3.4.1",
     "express": "^4.17.1",
     "flickity": "^2.2.1",
     "git": "^0.1.5",
     "jquery": "^3.4.1",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "yarn": "^1.22.4"
   },
   "devDependencies": {
     "copyfiles": "^2.2.0",
     "imagemin-cli": "^5.1.0",
-    "lite": "^4.0.5",
-    "lite-server": "^2.5.4",
     "node-sass": "^4.13.1",
     "onchange": "^3.3.0",
     "parallelshell": "^3.0.1",
     "rimraf": "^3.0.2",
-    "server": "^1.0.27",
     "usemin-cli": "^0.6.0"
-  }
+  },
+  "repository": "https://github.com/acain0822/lolApp.git"
 }
