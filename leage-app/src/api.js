@@ -16,7 +16,8 @@
 //     console.log(JSON.parse(event.data))
 // }
 
-var request = new XMLHttpRequest()
+function apiRequest(){
+    var request = new XMLHttpRequest()
 
 request.open('GET', 'https://api.pandascore.co/lol/matches?&token=GD7lXcl8dyVTiJfgFM4TDj5wK5eXZJSHGE1LLmovKHQpg-A4uLg', 'true')
 
@@ -29,3 +30,6 @@ request.onload = function() {
 }
 
 request.send()
+}
+
+export default apiRequest;
