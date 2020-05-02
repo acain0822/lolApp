@@ -1,35 +1,50 @@
-// curl https://api.pandascore.co/lives?token=GD7lXcl8dyVTiJfgFM4TDj5wK5eXZJSHGE1LLmovKHQpg-A4uLg
+const apiHost = "https://api.pandascore.co";
+const game = "/lol";
+const baseURI = `${apiHost}${game}`;
+const token = `GD7lXcl8dyVTiJfgFM4TDj5wK5eXZJSHGE1LLmovKHQpg-A4uLg`;
+const defaultHeaders = {
+  Accept: "application/json",
+  "Content-Type": "application/json",
+};
 
-// HTTP/1.1 200 OK
-// Content-Type: application/json; charset=utf-8
-// Link: <https://api.pandascore.co/lol/champions?page=3&token=GD7lXcl8dyVTiJfgFM4TDj5wK5eXZJSHGE1LLmovKHQpg-A4uLg>; rel="last", <https://api.pandascore.co/lol/matches?page=2&token=GD7lXcl8dyVTiJfgFM4TDj5wK5eXZJSHGE1LLmovKHQpg-A4uLg>; rel="next"
-// X-Page: 1
-// X-Per-Page: 50
-// X-Request-Id: c51e8cf0-c397-421c-8a09-44c126f55a36
-// X-Runtime: 0.077614
-// X-Total: 133
-
-// const apiToken = 'GD7lXcl8dyVTiJfgFM4TDj5wK5eXZJSHGE1LLmovKHQpg-A4uLg';
-
-// var socket = new WebSocket('wss://live.pandascore.co/lol/matches/&token=GD7lXcl8dyVTiJfgFM4TDj5wK5eXZJSHGE1LLmovKHQpg-A4uLg');
-// socket.onmessage = function(event) {
-//     console.log(JSON.parse(event.data))
-// }
-
-function apiRequest(){
-    var request = new XMLHttpRequest()
-
-request.open('GET', 'https://api.pandascore.co/lol/matches?&token=GD7lXcl8dyVTiJfgFM4TDj5wK5eXZJSHGE1LLmovKHQpg-A4uLg', 'true')
-
-request.onload = function() {
-    var data = JSON.parse(this.response)
-
-    data.forEach(match => {
-        console.log(match.name);
-    })
+function uri(path) {
+  return `${baseURI}/${path}?token=${token}`;
 }
 
-request.send()
+function get( path ) {
+	const fullURI = uri(path); 
+	
+	return fetch(fullURI, {
+		method: 'get',
+		headers: defaultHeaders
+	}).then((res) => {
+		return res.json();
+ 
+ })
 }
 
-export default apiRequest;
+function apiRequest() {
+  var request = new XMLHttpRequest();
+
+	const matches = get('matches');
+	matches.then( res => console.log(res) );
+	//console.log(matches);
+	return;
+  request.open(
+    "GET",
+    "https://api.pandascore.co/lol/lives?&token=GD7lXcl8dyVTiJfgFM4TDj5wK5eXZJSHGE1LLmovKHQpg-A4uLg",
+    "true"
+  );
+
+  request.onload = function () {
+    var data = JSON.parse(this.response);
+
+    data.forEach((match) => {
+      console.log(match);
+    });
+  };
+
+  request.send();
+}
+
+export default get;
