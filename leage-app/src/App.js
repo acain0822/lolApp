@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import get from './api';
-import './App.css';
+import HpSlide from './components/HpSlide';
+import './App.css'; 
 
 class App extends React.Component {
   state = {
@@ -18,15 +19,18 @@ class App extends React.Component {
           </p>
         
             <button onClick={ () => {
-            const matches = get('matches');
+            const matches = get(`/series/league-of-legends-na-lcs-summer-2018/matches`);
               matches.then( res => this.setState( {matches : res }) );
             }} >Request API</button>
-            Learn React
+            
 
         </header>
 
+
         <div>
-          {JSON.stringify(matches)}
+          { matches.map( match => <HpSlide key={match.id} opps={match.opponents}  /> 
+          ) } 
+          {/* {JSON.stringify(matches)} */}
         </div>
       </div>
     );
