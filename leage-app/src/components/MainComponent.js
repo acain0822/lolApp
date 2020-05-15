@@ -4,6 +4,7 @@ import Home from './HomeComponent';
 import Standings from './StandingsComponent';
 import Schedule from './ScheduleComponent';
 import {Switch, Route, Redirect } from 'react-router-dom';
+import get from '../api';
 
 class Main extends Component {
   state = {
@@ -13,13 +14,17 @@ class Main extends Component {
   render() {
     const HomePage = () => {
       return(
-        <Home>This is home</Home>
+        <Home matches={this.state.matches} />
       );
     };
 
     return (
 			<div>
 				<Header />
+        <button onClick={ () => {
+              const matches = get(`/series/league-of-legends-na-lcs-summer-2018/matches`);
+                matches.then( res => this.setState( {matches : res }) );
+              }} >Request API</button>
 				<Switch>
 					<Route path='/home' component={HomePage} />
           <Route path='/schedule' render={ () => <Schedule matches={this.state.matches} />} />
