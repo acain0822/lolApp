@@ -6,7 +6,7 @@ function HpSlide(props) {
   
     <div>
       {props.opps.map( op => <span key={op.opponent.id}>{op.opponent.acronym} 
-        <img src={op.opponent.image_url} width="30"/>
+        <img alt={op.opponent.acronym} src={op.opponent.image_url} width="30"/>
       </span>) }
     </div>
   )
