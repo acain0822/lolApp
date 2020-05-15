@@ -3,7 +3,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
 import HpSlide from './HpSlide';
 import get from '../api';
 
-function Home() {
+function Home(props) {
 
     return(
         <div>

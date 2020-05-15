@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Header from './HeaderComponent';
 import Home from './HomeComponent';
+import Standings from './StandingsComponent';
+import Schedule from './ScheduleComponent';
 import {Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends Component {
@@ -9,13 +11,10 @@ class Main extends Component {
   };
 
   render() {
-    const {matches} = this.state;
     const HomePage = () => {
       return(
-        // <Home matches={this.state.matches}>HomePage</Home> 
-
         <Home>This is home</Home>
-      )
+      );
     };
 
     return (
@@ -23,14 +22,14 @@ class Main extends Component {
 				<Header />
 				<Switch>
 					<Route path='/home' component={HomePage} />
-					<Redirect to='/home' />
+          <Route path='/schedule' render={ () => <Schedule matches={this.state.matches} />} />
+          <Route path='/standings' component={Standings} />
+					<Redirect to='/' />
 				</Switch>
-			
-       This is main
 			</div>
 		)
 
   };
 }
 
-export default Main ;
+export default Main;

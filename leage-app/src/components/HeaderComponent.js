@@ -6,17 +6,9 @@ import {
   NavbarToggler,
   Collapse,
   NavItem,
-  Jumbotron,
-  Button,
-  Modal,
-  ModalHeader,
-	ModalBody,
-	Form,
-	FormGroup,
-	Input,
-	Label
+  Jumbotron
 } from "reactstrap";
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 class Header extends Component {
   constructor(props){
@@ -33,21 +25,27 @@ class Header extends Component {
     });
   }
 
-
   render() {
     return (
       <React.Fragment>
-        <Jumbotron fluid>
-          <div className="container">
-
-          </div>
+        <Jumbotron >
           <Navbar dark expand="md">
             <NavbarToggler onClick={this.toggleNav} />
-            <Collapse isOpen={this.state.isNavOpen} navbar>
-              <Nav navbar>
+            <Collapse isOpen={this.state.isNavOpen}>
+              <Nav >
                 <NavItem>
                   <NavLink className="nav-link" to="/home">
                     Home
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <Link className="nav-link" to="/schedule">
+                    Schedule
+                  </Link>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="nav-link" to="/standings">
+                    Standings
                   </NavLink>
                 </NavItem>
               </Nav>
