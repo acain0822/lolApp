@@ -29,12 +29,13 @@ function get(path) {
 
 function apiRequest() {
   var request = new XMLHttpRequest();
-
   const matches = get(`${series}${naLCSSummer2019}${matchesURI}`);
   console.log(matches);
   matches.then((res) => console.log(res));
   return;
 
 }
+
+
 
 export default get;

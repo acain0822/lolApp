@@ -7,24 +7,37 @@ import {Switch, Route, Redirect } from 'react-router-dom';
 import get from '../api';
 
 class Main extends Component {
-  state = {
-    matches: []
-  };
+
+   state = {
+      matches: []
+    };
+
+  
+componentDidMount() {
+  // const matches = get(`/series/league-of-legends-na-lcs-summer-2018/matches`);
+ // matches.then( res => this.setState( {matches : res }) );
+ fetch('https://api.pandascore.co/series/league-of-legends-na-lcs-summer-2018/matches?token=GD7lXcl8dyVTiJfgFM4TDj5wK5eXZJSHGE1LLmovKHQpg-A4uLg')
+ .then((response) => response.json())
+ .then(match => {
+     this.setState({ matches: match });
+ });
+}
+
 
   render() {
+
+    
+
     const HomePage = () => {
       return(
         <Home matches={this.state.matches} />
       );
     };
 
+    
     return (
 			<div>
 				<Header />
-        <button onClick={ () => {
-              const matches = get(`/series/league-of-legends-na-lcs-summer-2018/matches`);
-                matches.then( res => this.setState( {matches : res }) );
-              }} >Request API</button>
 				<Switch>
 					<Route path='/home' component={HomePage} />
           <Route path='/schedule' render={ () => <Schedule matches={this.state.matches} />} />
