@@ -10,6 +10,7 @@ import {
 } from "reactstrap";
 import { NavLink, Link } from 'react-router-dom';
 
+
 class Header extends Component {
   constructor(props){
     super(props);
@@ -29,6 +30,10 @@ class Header extends Component {
     return (
       <React.Fragment>
         <Jumbotron >
+          {/* <button onClick={ () => {
+              const matches = get(`/series/league-of-legends-na-lcs-summer-2018/matches`);
+                matches.then( res => this.setState( {matches : res }) );
+              }} >Request API</button> */}
           <Navbar dark expand="md">
             <NavbarToggler onClick={this.toggleNav} />
             <Collapse isOpen={this.state.isNavOpen}>
