@@ -39,7 +39,7 @@ componentDidMount() {
 			<div>
 				<Header />
 				<Switch>
-					<Route path='/home' component={HomePage} />
+					<Route path='/' component={HomePage} />
           <Route path='/schedule' render={ () => <Schedule matches={this.state.matches} />} />
           <Route path='/standings' component={Standings} />
 					<Redirect to='/' />

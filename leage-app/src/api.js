@@ -15,7 +15,6 @@ function uri(path) {
   return `${baseURI}/${path}?token=${token}`;
 }
 
-
 function get(path) {
   //making full uri here
   const fullURI = uri(path);
