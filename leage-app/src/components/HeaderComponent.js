@@ -33,7 +33,7 @@ class Header extends Component {
     <div class="jumbotron py-sm-2 my-0">
 
       <nav class="navbar navbar-expand-lg text-white navbar-dark">
-        <Link class="navbar-brand" to="/home">LoLApp</Link>
+        <Link class="navbar-brand" to="/">LoLApp</Link>
         <button
           class="navbar-toggler"
           type="button"

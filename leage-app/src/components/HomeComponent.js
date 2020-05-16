@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
 import HpSlide from './HpSlide';
+import BodyContent from './BodyContent';
 import Flickity from 'react-flickity-component'
 // import Flickity from 'flickity';
  import 'flickity/dist/flickity.min.css';
@@ -16,7 +17,7 @@ function Home(props) {
 
 
     return(
-        <div>
+        <React.Fragment>
     <div id="teamsTicker" className="row ticker-wrapper schedule-carousel d-block mx-2">
       
 
@@ -32,11 +33,10 @@ function Home(props) {
      { props.matches.map( match => <HpSlide key={match.id} opps={match.opponents}  /> 
       ) }  
     </Flickity>
-  
+  </div>
 
-      
-        </div>
-      </div>
+  <BodyContent />
+      </React.Fragment>
     );
     
 }

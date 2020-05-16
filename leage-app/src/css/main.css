@@ -72,12 +72,17 @@ a:hover {
 .hp {
   background: #0d0d0e;
   color: white;
+  display: inline-block;
+  float: left;
+  width: 100%;
 }
 
 .schedule-carousel .carousel-cell {
   border: 1px solid rgba(255, 255, 255, 0.07) !important;
   height: 72px;
   width: 150px;
+  display: flex;
+  align-items: center;
 }
 
 .schedule-carousel .carousel-cell.is-selected {
@@ -109,3 +114,24 @@ a:hover {
   width: 50px;
   float: left;
 }
+
+
+/* new styles for league-app */
+/* #teamsTicker{
+  padding-bottom: 20px;
+} */
+
+.carousel-item img{
+  width:100%;
+}
+
+.carousel-cell{
+  border: 1px solid rgba(255,255,255, 0.07) !important;
+  height:72px;
+  width:150px;
+}
+
+.carousel-cell.is-selected {
+  background: rgba(255,255,255, 0.05);
+}
+
