@@ -4,7 +4,7 @@ import Home from './HomeComponent';
 import Standings from './StandingsComponent';
 import Schedule from './ScheduleComponent';
 import {Switch, Route, Redirect } from 'react-router-dom';
-import get from '../api';
+// import get from '../api';
 
 class Main extends Component {
 

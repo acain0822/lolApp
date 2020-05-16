@@ -33,7 +33,6 @@ function apiRequest() {
   console.log(matches);
   matches.then((res) => console.log(res));
   return;
-
 }
 
 
