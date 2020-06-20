@@ -1,82 +1,90 @@
-import React, { Component } from "react";
-import moment from "moment";
+import React, { Component, useState, useEffect } from "react";
+import { makeWeeksOfMatches } from "./utils";
+import {
+  Table,
+  TabContent,
+  TabPane,
+  Nav,
+  NavItem,
+  NavLink,
+  Col,
+} from "reactstrap";
+import classnames from "classnames";
 
-function DisplayAllDates({ matches }) {
-  const allMatches = matches.map((match) => match.begin_at);
+function CreateSchedule({ listofMatches }) {
+  const [activeTab, setActiveTab] = useState("1");
+  const toggle = (tab) => {
+    if (activeTab !== tab) setActiveTab(tab);
+  };
 
-  return JSON.stringify(allMatches);
-}
-
-function ParseSchedule({ matches }) {
-  // console.log(matches);
-  let matchDates = Array.from(matches.map((match) => match.begin_at));
-  // console.log(matchDates);
-
-  // from https://stackoverflow.com/questions/48083728/group-dates-by-week-javascript
-
-  //make an object that groups matches to weeks
-  // Week: matches
-  const groups = matchDates.reduce((acc = 0, date) => {
-    const yearWeek = `${moment(date).year()}-${moment(date).week()}`;
-
-    if (!acc[yearWeek]) {
-      acc[yearWeek] = [];
-    }
-
-    acc[yearWeek].push(date);
-    // acc[yearWeek].push(matchedMatch);
-    return acc;
-  }, {});
-
-// map an array of dates
-//getting dates that we will replace
-// ie ["2018-07-29T20:41:28Z", "2018-07-29T21:32:14Z", "2018-08-05T01:08:11Z"]
-  Object.values(groups).map((matchDateTime) => {
-  
-    console.log(matchDateTime);
-
-    //loop over every date in the array
-    for (let d = 0; d < matchDateTime.length; d++) {
-
-      //set a variable and set it to find a match from the matches array
-      //that has the same date and time to the
-      //entry in the matchDateTime array
-      console.log(matchDateTime[d]);
-      let matchWithDate = matches.filter( match => {
-       if(match.begin_at === matchDateTime[d]){
-         matchDateTime[d] = match;
-       }
-         console.log(matchDateTime[d]);
-
-      }
+  const weekArray = Object.keys(listofMatches);
+  const matchesofWeek = weekArray.map((week, inc = 0) => {
+    let weekObject = listofMatches[week];
+    inc++;
+    let matches = weekObject.map((match) => {
+      return (
+        <tr>
+          <td>
+            <img
+              alt={match.opponents[0].opponent.acronym}
+              style={{ width: "30px" }}
+              src={match.opponents[0].opponent.image_url}
+            />
+            {match.opponents[0].opponent.acronym} vs{" "}
+            <img
+              alt={match.opponents[1].opponent.acronym}
+              style={{ width: "30px" }}
+              src={match.opponents[1].opponent.image_url}
+            />
+            {match.opponents[1].opponent.acronym}
+          </td>
+        </tr>
       );
-
-    }
-    
-   // console.log(groups);
+    });
+    return (
+      <TabPane tabId={inc}>
+        <Table dark hover>
+          <tbody>{matches}</tbody>
+        </Table>
+      </TabPane>
+    );
   });
 
-  console.log(groups);
-  var weeks = Object.keys(groups);
-  return weeks.map((week, index = 0) => {
-    index++;
-    return <div> Week {index}</div>;
-  });
+  return (
+    <Col md="12">
+      <Nav tabs>
+        {weekArray.map((week, inc = 0) => {
+          inc++;
+          return (
+            <NavItem>
+              <NavLink
+                style={{ paddingLeft: "6px", paddingRight: "6px" }}
+                className={classnames({ active: activeTab === inc })}
+                onClick={() => {
+                  toggle(inc);
+                }}
+              >
+                Week {inc}
+              </NavLink>
+            </NavItem>
+          );
+        })}
+      </Nav>
+      <TabContent activeTab={activeTab}>{matchesofWeek}</TabContent>
+    </Col>
+  );
 }
 
 class Schedule extends Component {
   constructor(props) {
     super(props);
   }
-
   render() {
     return (
       <React.Fragment>
-        <DisplayAllDates matches={this.props.matches} />
-        <br />
-        <br />
-        <ParseSchedule matches={this.props.matches} />
-        <div>this is a schedule component</div>
+        <CreateSchedule
+          listofMatches={makeWeeksOfMatches(this.props.matches)}
+        />
       </React.Fragment>
     );
   }
