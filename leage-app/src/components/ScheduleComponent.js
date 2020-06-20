@@ -1,15 +1,29 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { makeWeeksOfMatches } from "./utils";
-import { Table, TabContent, TabPane, Nav, NavItem, NavLink } from "reactstrap";
+import {
+  Table,
+  TabContent,
+  TabPane,
+  Nav,
+  NavItem,
+  NavLink,
+  Col,
+} from "reactstrap";
+import classnames from "classnames";
 
 function CreateSchedule({ listofMatches }) {
+  const [activeTab, setActiveTab] = useState("1");
+  const toggle = (tab) => {
+    if (activeTab !== tab) setActiveTab(tab);
+  };
+
   const weekArray = Object.keys(listofMatches);
   const matchesofWeek = weekArray.map((week, inc = 0) => {
     let weekObject = listofMatches[week];
+    inc++;
     let matches = weekObject.map((match) => {
-      console.log(match);
       return (
-        <tr key={match.id}>
+        <tr>
           <td>
             <img
               alt={match.opponents[0].opponent.acronym}
@@ -18,43 +32,59 @@ function CreateSchedule({ listofMatches }) {
             />
             {match.opponents[0].opponent.acronym} vs{" "}
             <img
-            alt={match.opponents[1].opponent.acronym}
+              alt={match.opponents[1].opponent.acronym}
               style={{ width: "30px" }}
               src={match.opponents[1].opponent.image_url}
             />
             {match.opponents[1].opponent.acronym}
           </td>
-          <td></td>
         </tr>
       );
     });
     return (
-      <React.Fragment>
-        <thead>
-          <th>Week {inc + 1}</th>
-        </thead>
-        <tbody>{matches}</tbody>
-      </React.Fragment>
+      <TabPane tabId={inc}>
+        <Table dark hover>
+          <tbody>{matches}</tbody>
+        </Table>
+      </TabPane>
     );
   });
 
-  return <Table dark hover responsive>{matchesofWeek}</Table>;
+  return (
+    <Col md="12">
+      <Nav tabs>
+        {weekArray.map((week, inc = 0) => {
+          inc++;
+          return (
+            <NavItem>
+              <NavLink
+                style={{ paddingLeft: "6px", paddingRight: "6px" }}
+                className={classnames({ active: activeTab === inc })}
+                onClick={() => {
+                  toggle(inc);
+                }}
+              >
+                Week {inc}
+              </NavLink>
+            </NavItem>
+          );
+        })}
+      </Nav>
+      <TabContent activeTab={activeTab}>{matchesofWeek}</TabContent>
+    </Col>
+  );
 }
 
 class Schedule extends Component {
   constructor(props) {
     super(props);
   }
-
   render() {
     return (
       <React.Fragment>
         <CreateSchedule
           listofMatches={makeWeeksOfMatches(this.props.matches)}
         />
-        <br />
-        <br />
-        <div>this is a schedule component</div>
       </React.Fragment>
     );
   }

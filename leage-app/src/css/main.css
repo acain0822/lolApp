@@ -63,6 +63,13 @@ a:hover {
   border-color: transparent;
 }
 
+.nav.nav-tabs{{
+  justify-content: space-evently;
+}}
+.nav-link{
+  cursor: pointer;
+}
+
 .nav-tabs .nav-link:focus,
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:active {
@@ -75,6 +82,7 @@ a:hover {
   display: inline-block;
   float: left;
   width: 100%;
+  min-height: 100vh;
 }
 
 .schedule-carousel .carousel-cell {
