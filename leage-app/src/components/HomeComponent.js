@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
 import HpSlide from './HpSlide';
 import BodyContent from './BodyContent';
 import Flickity from 'react-flickity-component'

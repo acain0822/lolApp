@@ -18,7 +18,8 @@ export function makeWeeksOfMatches(listOfMatches) {
     acc[yearWeek].push(date);
     return acc;
   }, {});
-// map an array of dates
+
+  // map an array of dates
   Object.values(groups).map((matchDateTime) => {
   
     //loop over every date in the array
@@ -29,14 +30,12 @@ export function makeWeeksOfMatches(listOfMatches) {
        if(match.begin_at === matchDateTime[d]){
          matchDateTime[d] = match;
        }
-      }
-      );
-
+      });
     }
     
   }); 
-
-  //console.log(groups);
+  console.log('Look Here')
+  console.log(groups);
   return groups;
 
 }
