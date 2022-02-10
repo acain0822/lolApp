@@ -19,7 +19,7 @@
   "devDependencies": {
     "copyfiles": "^2.2.0",
     "imagemin-cli": "^5.1.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "onchange": "^3.3.0",
     "parallelshell": "^3.0.1",
     "rimraf": "^3.0.2",
